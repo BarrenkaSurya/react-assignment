@@ -1,13 +1,16 @@
 import React from 'react'
 
-function Todolist( {todolist} ) {
+function Todolist( {todolist,deleteHandler} ) {
   return (
     <div>
-      {todolist.map((todos,index) => {
+      {todolist.map((todo,index) => 
         <div key={index}>
-            <li>{todos}</li>
+            <div className='list'>
+                <li>{todo}</li> 
+                <button onClick={() => deleteHandler(index)}>Delete</button>
+            </div>
         </div>
-      })}
+      )}
     </div>
   )
 }
